@@ -10,5 +10,11 @@ body {
 .card {
   border: 1px solid #ccc;
   padding: 15px;
-  width: 200px;
+  width: 100px;
+}
+.img{
+  background-color: beige;
+  width: 0x;
+  height: 0px;
+  padding: 10px;
 }

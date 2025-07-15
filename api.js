@@ -1,15 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const data = require('../data/dummyData');
+
+
+const restaurants = [];
+const orders = [];
+
+
+router.post('/restaurants', (req, res) => {
+  const restaurant = req.body;
+  restaurant.id = restaurants.length + 1;
+  restaurants.push(restaurant);
+  res.json({ message: 'Restaurant added', restaurant });
+});
+
 
 router.get('/restaurants', (req, res) => {
-  res.json(data.restaurants);
+  res.json(restaurants);
 });
+
 
 router.post('/order', (req, res) => {
   const order = req.body;
-  console.log("Received Order:", order);
-  res.json({ status: "Order received!", orderId: Math.floor(Math.random() * 10000) });
+  order.id = orders.length + 1;
+  orders.push(order);
+  res.json({ message: 'Order placed', orderId: order.id });
 });
 
 module.exports = router;

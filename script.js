@@ -20,6 +20,7 @@ fetch("http://localhost:3000/api/restaurants")
       });
       container.appendChild(card);
     });
+    
   });
 
 function placeOrder() {
